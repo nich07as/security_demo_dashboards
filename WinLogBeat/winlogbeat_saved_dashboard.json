@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "13fd23e0-123e-11e9-9e77-c5f255b25b4a",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Winlogbeat - Kill Chain Demo",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":7,\"i\":\"1\"},\"version\":\"6.5.1\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"id\":\"70c33a70-9efc-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":7,\"w\":48,\"h\":6,\"i\":\"2\"},\"version\":\"6.5.1\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"id\":\"0b537db0-9ef4-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":13,\"w\":48,\"h\":13,\"i\":\"3\"},\"version\":\"6.5.1\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"id\":\"5aa06f80-9ef5-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":26,\"w\":48,\"h\":18,\"i\":\"4\"},\"version\":\"6.5.1\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"id\":\"d4ce34e0-9ef5-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":44,\"w\":24,\"h\":15,\"i\":\"5\"},\"version\":\"6.5.1\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"id\":\"fd941380-9efb-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":24,\"y\":44,\"w\":24,\"h\":15,\"i\":\"6\"},\"version\":\"6.5.1\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"id\":\"27675230-9efc-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":59,\"w\":24,\"h\":15,\"i\":\"7\"},\"version\":\"6.5.1\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"id\":\"c045a610-9efb-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":24,\"y\":59,\"w\":24,\"h\":15,\"i\":\"8\"},\"version\":\"6.5.1\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"id\":\"6525bc50-9ef8-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":74,\"w\":48,\"h\":17,\"i\":\"9\"},\"version\":\"6.5.1\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"id\":\"23f1be00-9efd-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":91,\"w\":10,\"h\":17,\"i\":\"10\"},\"version\":\"6.5.1\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"id\":\"6a12e770-e105-11e8-92b0-edb556c8e7d0\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":10,\"y\":91,\"w\":10,\"h\":17,\"i\":\"11\"},\"version\":\"6.5.1\",\"panelIndex\":\"11\",\"type\":\"visualization\",\"id\":\"108459d0-e107-11e8-92b0-edb556c8e7d0\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":20,\"y\":91,\"w\":28,\"h\":17,\"i\":\"12\"},\"version\":\"6.5.1\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"id\":\"67a22370-9ef7-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":108,\"w\":15,\"h\":17,\"i\":\"13\"},\"version\":\"6.5.1\",\"panelIndex\":\"13\",\"type\":\"visualization\",\"id\":\"d20df180-9ef7-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":15,\"y\":108,\"w\":9,\"h\":17,\"i\":\"14\"},\"version\":\"6.5.1\",\"panelIndex\":\"14\",\"type\":\"visualization\",\"id\":\"4f972c00-9efa-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":24,\"y\":108,\"w\":24,\"h\":17,\"i\":\"15\"},\"version\":\"6.5.1\",\"panelIndex\":\"15\",\"type\":\"visualization\",\"id\":\"26307220-9ef7-11e8-b2a2-478fa89280ea\",\"embeddableConfig\":{}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  }
+]

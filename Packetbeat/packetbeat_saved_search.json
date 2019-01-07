@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "Packetbeat-Search",
+    "_type": "search",
+    "_source": {
+      "title": "Packetbeat Search",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "client_ip",
+        "client_port",
+        "ip",
+        "port",
+        "type",
+        "query",
+        "method",
+        "responsetime",
+        "status"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a838f020-9d6d-11e8-b2a2-478fa89280ea\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query\":{\"query_string\":{\"query\":\"NOT type: flow\",\"analyze_wildcard\":true}},\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "Packetbeat-Flows-Search",
+    "_type": "search",
+    "_source": {
+      "title": "Packetbeat Flows Search",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "type",
+        "start_time",
+        "last_time",
+        "source.ip",
+        "source.port",
+        "dest.ip",
+        "dest.port",
+        "source.stats.net_bytes_total",
+        "dest.stats.net_bytes_total"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a838f020-9d6d-11e8-b2a2-478fa89280ea\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query\":\"type: flow AND source.ip:[172.30.0.0 TO 172.30.255.255] AND dest.ip:[172.30.0.0 TO 172.30.255.255]\",\"language\":\"lucene\"},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "_id": "b2ee7260-9ee9-11e8-b2a2-478fa89280ea",
+    "_type": "search",
+    "_source": {
+      "title": "Winlogbeat - View",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "log_name",
+        "computer_name",
+        "event_data.SourceIp",
+        "event_data.SourcePort",
+        "event_data.DestinationIp",
+        "event_data.DestinationPort",
+        "event_data.LogonType",
+        "event_data.Image",
+        "event_data.ParentImage",
+        "event_data.ParentCommandLine",
+        "event_data.ParentProcessId",
+        "event_data.TargetUserName",
+        "event_data.User",
+        "keywords",
+        "event_id",
+        "source_name",
+        "user.name",
+        "task"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a0c39b10-9d6d-11e8-b2a2-478fa89280ea\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"(event_data.SourceIp:[172.30.0.0 TO 172.30.255.255] AND event_data.DestinationIp:[172.30.0.0 TO 172.30.255.255]) OR log_name: Security\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  }
+]

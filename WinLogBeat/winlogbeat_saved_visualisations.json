@@ -1,0 +1,222 @@
+[
+  {
+    "_id": "70c33a70-9efc-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLogBeat - IP, Image or Log Type Selector",
+      "visState": "{\"title\":\"WinLogBeat - IP, Image or Log Type Selector\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1534166669823\",\"indexPattern\":\"a0c39b10-9d6d-11e8-b2a2-478fa89280ea\",\"fieldName\":\"event_data.SourceIp\",\"parent\":\"\",\"label\":\"Source IP\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":10,\"order\":\"desc\"}},{\"id\":\"1534166696839\",\"indexPattern\":\"a0c39b10-9d6d-11e8-b2a2-478fa89280ea\",\"fieldName\":\"event_data.Image\",\"parent\":\"\",\"label\":\"Image Name\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"}},{\"id\":\"1534166720116\",\"indexPattern\":\"a0c39b10-9d6d-11e8-b2a2-478fa89280ea\",\"fieldName\":\"log_name\",\"parent\":\"\",\"label\":\"Log Type\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":5,\"order\":\"desc\"}}],\"updateFiltersOnChange\":false,\"useTimeFilter\":false,\"pinFilters\":false},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "5aa06f80-9ef5-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLogBeat - Total Events by Hosts over Time",
+      "visState": "{\"title\":\"WinLogBeat - Total Events by Hosts over Time\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"square root\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Event Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Event Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":false}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Event Count\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"timeRange\":{\"from\":\"now-1h\",\"to\":\"now\",\"mode\":\"quick\"},\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"time_zone\":\"Asia/Tokyo\",\"drop_partials\":false,\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"TimeStamp\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"computer_name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Host(s)\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Microsoft-Windows-Sysmon/Operational\":\"#0A50A1\",\"Security\":\"#5195CE\",\"System\":\"#70DBED\",\"Microsoft-Windows-Sysmon/Operational: Event Count\":\"#0A50A1\",\"server-1\":\"#BF1B00\",\"server-3\":\"#E0752D\",\"server-2\":\"#629E51\"}}}",
+      "description": "",
+      "savedSearchId": "b2ee7260-9ee9-11e8-b2a2-478fa89280ea",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  },
+  {
+    "_id": "d4ce34e0-9ef5-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinlogBeat - Top Log Types by Hosts",
+      "visState": "{\"title\":\"WinlogBeat - Top Log Types by Hosts\",\"type\":\"heatmap\",\"params\":{\"type\":\"heatmap\",\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"right\",\"times\":[],\"colorsNumber\":10,\"colorSchema\":\"Yellow to Red\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":false},\"labels\":{\"show\":false,\"rotate\":0,\"overwriteColor\":false,\"color\":\"#555\"}}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Event Count\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"computer_name\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Host(s)\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"log_name\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Log Type\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 4,500\":\"rgb(255,255,204)\",\"4,500 - 9,000\":\"rgb(255,241,170)\",\"9,000 - 13,500\":\"rgb(254,225,135)\",\"13,500 - 18,000\":\"rgb(254,201,101)\",\"18,000 - 22,500\":\"rgb(254,171,73)\",\"22,500 - 27,000\":\"rgb(253,141,60)\",\"27,000 - 31,500\":\"rgb(252,91,46)\",\"31,500 - 36,000\":\"rgb(237,47,34)\",\"36,000 - 40,500\":\"rgb(212,16,32)\",\"40,500 - 45,000\":\"rgb(176,0,38)\"}}}",
+      "description": "",
+      "savedSearchId": "b2ee7260-9ee9-11e8-b2a2-478fa89280ea",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  },
+  {
+    "_id": "fd941380-9efb-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLogBeat - Event Count by Event IDs",
+      "visState": "{\"title\":\"WinLogBeat - Event Count by Event IDs\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"rgba(104,188,0,1)\",\"split_mode\":\"terms\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"count\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":\"2\",\"point_size\":\"0\",\"fill\":\"0.1\",\"stacked\":\"stacked\",\"terms_field\":\"event_id\",\"terms_order_by\":\"_count\",\"split_color_mode\":\"rainbow\",\"terms_size\":\"20\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"winlogbeat*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"legend_position\":\"bottom\",\"filter\":\"(event_data.SourceIp:[172.30.0.0 TO 172.30.255.255] AND event_data.DestinationIp:[172.30.0.0 TO 172.30.255.255]) OR log_name: Security\",\"axis_scale\":\"normal\",\"annotations\":[{\"fields\":\"event_data.TargetUserName\",\"template\":\"{{event_data.TargetUserName}} - Network Logon\",\"index_pattern\":\"winlogbeat*\",\"query_string\":\"event_id:4624 AND _exists_:event_data.TargetUserName AND event_data.LogonType:3\",\"id\":\"63ad0d50-fc32-11e8-a290-53cdbf7c2588\",\"color\":\"rgba(244,78,59,1)\",\"time_field\":\"@timestamp\",\"icon\":\"fa-asterisk\",\"ignore_global_filters\":0,\"ignore_panel_filters\":0},{\"fields\":\"event_data.TargetUserName\",\"template\":\"{{event_data.TargetUserName}} - Remote Desktop Logon\",\"index_pattern\":\"winlogbeat*\",\"query_string\":\"event_id:4624 AND _exists_:event_data.TargetUserName AND event_data.LogonType:10\",\"id\":\"9fe24d20-fc33-11e8-a290-53cdbf7c2588\",\"color\":\"rgba(254,146,0,1)\",\"time_field\":\"@timestamp\",\"icon\":\"fa-fire\",\"ignore_global_filters\":0,\"ignore_panel_filters\":0}]},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "27675230-9efc-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLogBeat - Event Count by Images",
+      "visState": "{\"title\":\"WinLogBeat - Event Count by Images\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"0288ff40-9efc-11e8-aca9-abd5951f33dc\",\"color\":\"rgba(254,146,0,1)\",\"split_mode\":\"terms\",\"metrics\":[{\"id\":\"0288ff41-9efc-11e8-aca9-abd5951f33dc\",\"type\":\"count\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":\"2\",\"point_size\":\"0\",\"fill\":\"0.1\",\"stacked\":\"stacked\",\"terms_field\":\"event_data.Image\",\"terms_order_by\":\"_count\",\"split_color_mode\":\"rainbow\",\"terms_size\":\"10\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"winlogbeat*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"legend_position\":\"bottom\",\"filter\":\"(event_data.SourceIp:[172.30.0.0 TO 172.30.255.255] AND event_data.DestinationIp:[172.30.0.0 TO 172.30.255.255]) OR log_name: Security\",\"axis_scale\":\"normal\",\"annotations\":[{\"fields\":\"event_data.TargetUserName\",\"template\":\"{{event_data.TargetUserName}} - Network Logon\",\"index_pattern\":\"winlogbeat*\",\"query_string\":\"event_id:4624 AND _exists_:event_data.TargetUserName AND event_data.LogonType:3\",\"id\":\"3a9bad20-fc34-11e8-bc18-051ee32f76be\",\"color\":\"#F00\",\"time_field\":\"@timestamp\",\"icon\":\"fa-asterisk\",\"ignore_global_filters\":0,\"ignore_panel_filters\":0},{\"fields\":\"event_data.TargetUserName\",\"template\":\"{{event_data.TargetUserName}} - Remote Desktop Logon\",\"index_pattern\":\"winlogbeat*\",\"query_string\":\"event_id:4624 AND _exists_:event_data.TargetUserName AND event_data.LogonType:10\",\"id\":\"537a75b0-fc39-11e8-bc18-051ee32f76be\",\"color\":\"rgba(254,146,0,1)\",\"time_field\":\"@timestamp\",\"icon\":\"fa-fire\",\"ignore_global_filters\":0,\"ignore_panel_filters\":0}]},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "c045a610-9efb-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLogBeat - Event Count by Log Type",
+      "visState": "{\"title\":\"WinLogBeat - Event Count by Log Type\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"rgba(115,216,255,1)\",\"split_mode\":\"terms\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"count\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":\"2\",\"point_size\":\"0\",\"fill\":\"0.1\",\"stacked\":\"stacked\",\"terms_field\":\"log_name\",\"terms_order_by\":\"_count\",\"split_color_mode\":\"rainbow\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"winlogbeat*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"legend_position\":\"bottom\",\"filter\":\"(event_data.SourceIp:[172.30.0.0 TO 172.30.255.255] AND event_data.DestinationIp:[172.30.0.0 TO 172.30.255.255]) OR log_name: Security\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "6525bc50-9ef8-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLogBeat - Source vs Destination IPs",
+      "visState": "{\"title\":\"WinLogBeat - Source vs Destination IPs\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"rgba(0,156,224,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"cardinality\",\"field\":\"event_data.SourceIp\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":\"2\",\"point_size\":\"0\",\"fill\":\"0.1\",\"stacked\":\"none\",\"label\":\"Source IPs\"},{\"id\":\"22ee4a00-9ef8-11e8-aca9-abd5951f33dc\",\"color\":\"rgba(244,78,59,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"22ee4a01-9ef8-11e8-aca9-abd5951f33dc\",\"type\":\"cardinality\",\"field\":\"event_data.DestinationIp\"},{\"script\":\"params.invert * -1\",\"id\":\"3b776ac0-9ef8-11e8-aca9-abd5951f33dc\",\"type\":\"calculation\",\"variables\":[{\"id\":\"3ee7b250-9ef8-11e8-aca9-abd5951f33dc\",\"name\":\"invert\",\"field\":\"22ee4a01-9ef8-11e8-aca9-abd5951f33dc\"}]}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":\"2\",\"point_size\":\"0\",\"fill\":\"0.1\",\"stacked\":\"none\",\"label\":\"Destination IPs\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"winlogbeat*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"legend_position\":\"bottom\",\"filter\":\"(event_data.SourceIp:[172.30.0.0 TO 172.30.255.255] AND event_data.DestinationIp:[172.30.0.0 TO 172.30.255.255]) OR log_name: Security\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "23f1be00-9efd-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLogBeat - Event IDs by Types, Count and Destinations",
+      "visState": "{\"title\":\"WinLogBeat - Event IDs by Types, Count and Destinations\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Event Count\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"event_id\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Event IDs\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.DestinationIp\",\"customLabel\":\"Destinations\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"log_name\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":1,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Log Type\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "b2ee7260-9ee9-11e8-b2a2-478fa89280ea",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  },
+  {
+    "_id": "6a12e770-e105-11e8-92b0-edb556c8e7d0",
+    "_type": "visualization",
+    "_source": {
+      "title": "Winlogbeat - UserNames by Successful Logons",
+      "visState": "{\"title\":\"Winlogbeat - UserNames by Successful Logons\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Event Count\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"event_data.TargetUserName\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"OS User Name(s)\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "b2ee7260-9ee9-11e8-b2a2-478fa89280ea",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"event_id:4624\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "108459d0-e107-11e8-92b0-edb556c8e7d0",
+    "_type": "visualization",
+    "_source": {
+      "title": "Winlogbeat - UserNames by Failed Logons",
+      "visState": "{\"title\":\"Winlogbeat - UserNames by Failed Logons\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Event Count\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"event_data.TargetUserName\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"OS User Name(s)\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "b2ee7260-9ee9-11e8-b2a2-478fa89280ea",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"event_id:4625\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "67a22370-9ef7-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLogBeat - UserNames by Images and PIDs Table",
+      "visState": "{\"title\":\"WinLogBeat - UserNames by Images and PIDs Table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.Image\",\"customLabel\":\"Sysmon - Images\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.ProcessId\",\"customLabel\":\"Process IDs\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"user.name\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"User Name(s)\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_id\",\"customLabel\":\"Event IDs\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "b2ee7260-9ee9-11e8-b2a2-478fa89280ea",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  },
+  {
+    "_id": "d20df180-9ef7-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLogBeat - Application Names by Hosts and Users Table",
+      "visState": "{\"title\":\"WinLogBeat - Application Names by Hosts and Users Table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"event_data.Image\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Application Name\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"computer_name\",\"customLabel\":\"Hosts\"}},{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.User\",\"customLabel\":\"Users\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "b2ee7260-9ee9-11e8-b2a2-478fa89280ea",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  },
+  {
+    "_id": "4f972c00-9efa-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLogBeat - Source IPs to Unique Destinations by Count",
+      "visState": "{\"title\":\"WinLogBeat - Source IPs to Unique Destinations by Count\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"event_data.SourceIp\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"3\",\"customLabel\":\"Source IP\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.DestinationIp\",\"customLabel\":\"Unique Destinations\"}},{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "b2ee7260-9ee9-11e8-b2a2-478fa89280ea",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  },
+  {
+    "_id": "26307220-9ef7-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLogBeat - Hosts by Images and PIDs Table",
+      "visState": "{\"title\":\"WinLogBeat - Hosts by Images and PIDs Table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.Image\",\"customLabel\":\"Sysmon - Images\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.ProcessId\",\"customLabel\":\"Process IDs\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"user.name\",\"customLabel\":\"User(s)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"computer_name\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Host(s)\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_id\",\"customLabel\":\"Event IDs\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "b2ee7260-9ee9-11e8-b2a2-478fa89280ea",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  },
+  {
+    "_id": "0b537db0-9ef4-11e8-b2a2-478fa89280ea",
+    "_type": "visualization",
+    "_source": {
+      "title": "Winlogbeat - Metrics by Types, Hosts, Users & Process",
+      "visState": "{\"title\":\"Winlogbeat - Metrics by Types, Hosts, Users & Process\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":40}}},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"log_name\",\"customLabel\":\"Log Types\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"user.name\",\"customLabel\":\"Sysmon - User Name(s)\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.TargetUserName\",\"customLabel\":\"OS - User Name(s)\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"computer_name\",\"customLabel\":\"Host(s)\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.ProcessName\",\"customLabel\":\"Process Name(s)\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.ProcessId\",\"customLabel\":\"Process IDs\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "b2ee7260-9ee9-11e8-b2a2-478fa89280ea",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  }
+]

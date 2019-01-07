@@ -1,0 +1,119 @@
+[
+  {
+    "_id": "595efe70-a2dd-11e8-8e0b-ef1400a16e8a",
+    "_type": "visualization",
+    "_source": {
+      "title": "PacketBeat - Source Destination Input",
+      "visState": "{\"title\":\"PacketBeat - Source Destination Input\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1534593168217\",\"indexPattern\":\"a838f020-9d6d-11e8-b2a2-478fa89280ea\",\"fieldName\":\"source.ip\",\"parent\":\"\",\"label\":\"Source Address\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"}},{\"id\":\"1534593192259\",\"indexPattern\":\"a838f020-9d6d-11e8-b2a2-478fa89280ea\",\"fieldName\":\"dest.ip\",\"parent\":\"\",\"label\":\"Destination IP\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"}}],\"updateFiltersOnChange\":false,\"useTimeFilter\":false,\"pinFilters\":false},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "a08c0ee0-a2d4-11e8-8e0b-ef1400a16e8a",
+    "_type": "visualization",
+    "_source": {
+      "title": "PacketBeat - Flows Metrics",
+      "visState": "{\"title\":\"PacketBeat - Flows Metrics\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":30}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"flow_id\",\"customLabel\":\"# of flows\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"source.ip\",\"customLabel\":\"Source IPs\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dest.ip\",\"customLabel\":\"Destination IPs\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dest.port\",\"customLabel\":\"Destination Ports\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Packetbeat-Flows-Search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  },
+  {
+    "_id": "aa2f2e80-a2d6-11e8-8e0b-ef1400a16e8a",
+    "_type": "visualization",
+    "_source": {
+      "title": "PacketBeat - Source & Destination Bandwidth / Sec",
+      "visState": "{\"title\":\"PacketBeat - Source & Destination Bandwidth / Sec\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"rgba(0,156,224,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"sum\",\"field\":\"source.stats.net_bytes_total\"},{\"id\":\"55c22cd0-a2d6-11e8-844a-a9a0e8b7a0c4\",\"type\":\"cumulative_sum\",\"field\":\"61ca57f2-469d-11e7-af02-69e470af7417\"},{\"unit\":\"1s\",\"id\":\"5b6f4500-a2d6-11e8-844a-a9a0e8b7a0c4\",\"type\":\"derivative\",\"field\":\"55c22cd0-a2d6-11e8-844a-a9a0e8b7a0c4\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"bytes\",\"chart_type\":\"line\",\"line_width\":\"2\",\"point_size\":\"0\",\"fill\":\"0\",\"stacked\":\"none\",\"label\":\"Source Bytes / sec\"},{\"id\":\"78fdf350-a2d6-11e8-844a-a9a0e8b7a0c4\",\"color\":\"rgba(244,78,59,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"78fdf351-a2d6-11e8-844a-a9a0e8b7a0c4\",\"type\":\"sum\",\"field\":\"dest.stats.net_bytes_total\"},{\"id\":\"78fdf352-a2d6-11e8-844a-a9a0e8b7a0c4\",\"type\":\"cumulative_sum\",\"field\":\"78fdf351-a2d6-11e8-844a-a9a0e8b7a0c4\"},{\"unit\":\"1s\",\"id\":\"78fdf353-a2d6-11e8-844a-a9a0e8b7a0c4\",\"type\":\"derivative\",\"field\":\"78fdf352-a2d6-11e8-844a-a9a0e8b7a0c4\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"bytes\",\"chart_type\":\"line\",\"line_width\":\"2\",\"point_size\":\"0\",\"fill\":\"0\",\"stacked\":\"none\",\"label\":\"Destination Bytes / sec\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"packetbeat*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"legend_position\":\"bottom\",\"bar_color_rules\":[{\"id\":\"cc8724b0-a2d6-11e8-844a-a9a0e8b7a0c4\"}],\"gauge_color_rules\":[{\"id\":\"d01ea350-a2d6-11e8-844a-a9a0e8b7a0c4\"}],\"gauge_width\":10,\"gauge_inner_width\":10,\"gauge_style\":\"half\",\"background_color_rules\":[{\"id\":\"d1303a60-a2d6-11e8-844a-a9a0e8b7a0c4\"}]},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "91c558c0-a2da-11e8-8e0b-ef1400a16e8a",
+    "_type": "visualization",
+    "_source": {
+      "title": "PacketBeat - Top Sources by Unique Destination IPs",
+      "visState": "{\"title\":\"PacketBeat - Top Sources by Unique Destination IPs\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"2d50a430-a2da-11e8-844a-a9a0e8b7a0c4\",\"color\":\"rgba(244,78,59,1)\",\"split_mode\":\"terms\",\"metrics\":[{\"id\":\"2d50a431-a2da-11e8-844a-a9a0e8b7a0c4\",\"type\":\"cardinality\",\"field\":\"dest.ip\"}],\"seperate_axis\":1,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":\"1\",\"point_size\":\"0\",\"fill\":\"0\",\"stacked\":\"none\",\"terms_field\":\"source.ip\",\"split_color_mode\":\"gradient\",\"label\":\"Unique Destinations\",\"value_template\":\"{{value}} ports\"},{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"rgba(0,156,224,1)\",\"split_mode\":\"terms\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"count\",\"field\":\"dest.ip\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"bar\",\"line_width\":\"2\",\"point_size\":\"0\",\"fill\":\"1\",\"stacked\":\"none\",\"terms_field\":\"source.ip\",\"split_color_mode\":\"gradient\",\"label\":\"Event Count\",\"value_template\":\"{{value}} events\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"packetbeat*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"legend_position\":\"bottom\",\"filter\":\"source.ip:[172.30.0.0 TO 172.30.255.255] AND dest.ip:[172.30.0.0 TO 172.30.255.255]\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "4593ece0-a2db-11e8-8e0b-ef1400a16e8a",
+    "_type": "visualization",
+    "_source": {
+      "title": "PacketBeat - Top Sources by Unique DestinationIP & Dst Ports",
+      "visState": "{\"title\":\"PacketBeat - Top Sources by Unique DestinationIP & Dst Ports\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100,\"rotate\":75},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Unique Destination IPs\"}},{\"id\":\"ValueAxis-2\",\"name\":\"RightAxis-1\",\"type\":\"value\",\"position\":\"right\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Unique Destination Ports\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Unique Destination IPs\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true},{\"show\":true,\"mode\":\"stacked\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"linear\",\"data\":{\"id\":\"3\",\"label\":\"Unique Destination Ports\"},\"valueAxis\":\"ValueAxis-2\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"radiusRatio\":21},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dest.ip\",\"customLabel\":\"Unique Destination IPs\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"source.ip\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Source Address\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dest.port\",\"customLabel\":\"Unique Destination Ports\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"radius\",\"params\":{\"field\":\"dest.port\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Unique Destination IPs\":\"#447EBC\",\"Unique Destination Ports\":\"#E24D42\"}}}",
+      "description": "",
+      "savedSearchId": "Packetbeat-Flows-Search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  },
+  {
+    "_id": "261c2150-a2dd-11e8-8e0b-ef1400a16e8a",
+    "_type": "visualization",
+    "_source": {
+      "title": "PacketBeat - Data Table",
+      "visState": "{\"title\":\"PacketBeat - Data Table\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dest.ip\",\"customLabel\":\"Destination IPs\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dest.port\",\"customLabel\":\"Destination Ports\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Event Count\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"source.ip\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":9,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Source IPs\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "Packetbeat-Flows-Search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  },
+  {
+    "_id": "6567cd10-a2d7-11e8-8e0b-ef1400a16e8a",
+    "_type": "visualization",
+    "_source": {
+      "title": "PacketBeat - Top Source Address by Unique Destination Count",
+      "visState": "{\"title\":\"PacketBeat - Top Source Address by Unique Destination Count\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"linear\",\"orientation\":\"single\",\"minFontSize\":18,\"maxFontSize\":40,\"showLabel\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dest.ip\",\"customLabel\":\"Destination Count\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"source.ip\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Packetbeat-Flows-Search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  },
+  {
+    "_id": "e2b1c690-a2d7-11e8-8e0b-ef1400a16e8a",
+    "_type": "visualization",
+    "_source": {
+      "title": "PacketBeat - Top Source Address by Unique Services Count",
+      "visState": "{\"title\":\"PacketBeat - Top Source Address by Unique Services Count\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"linear\",\"orientation\":\"single\",\"minFontSize\":18,\"maxFontSize\":40,\"showLabel\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dest.port\",\"customLabel\":\"Services\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"source.ip\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Packetbeat-Flows-Search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"}}"
+      }
+    }
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "95cf19d0-a2dd-11e8-8e0b-ef1400a16e8a",
+    "_type": "dashboard",
+    "_source": {
+      "title": "PacketBeat Overview",
+      "hits": 0,
+      "description": "Payload execution on Dec 10th",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":18,\"w\":48,\"h\":8,\"i\":\"1\"},\"embeddableConfig\":{},\"id\":\"a08c0ee0-a2d4-11e8-8e0b-ef1400a16e8a\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":0,\"y\":26,\"w\":48,\"h\":12,\"i\":\"2\"},\"embeddableConfig\":{},\"id\":\"aa2f2e80-a2d6-11e8-8e0b-ef1400a16e8a\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":0,\"y\":70,\"w\":24,\"h\":15,\"i\":\"3\"},\"embeddableConfig\":{},\"id\":\"6567cd10-a2d7-11e8-8e0b-ef1400a16e8a\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":24,\"y\":70,\"w\":24,\"h\":15,\"i\":\"4\"},\"embeddableConfig\":{},\"id\":\"e2b1c690-a2d7-11e8-8e0b-ef1400a16e8a\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"5\",\"gridData\":{\"x\":0,\"y\":38,\"w\":48,\"h\":13,\"i\":\"5\"},\"embeddableConfig\":{},\"id\":\"91c558c0-a2da-11e8-8e0b-ef1400a16e8a\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"6\",\"gridData\":{\"x\":0,\"y\":51,\"w\":24,\"h\":19,\"i\":\"6\"},\"embeddableConfig\":{},\"id\":\"4593ece0-a2db-11e8-8e0b-ef1400a16e8a\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"7\",\"gridData\":{\"x\":24,\"y\":51,\"w\":24,\"h\":19,\"i\":\"7\"},\"embeddableConfig\":{},\"id\":\"261c2150-a2dd-11e8-8e0b-ef1400a16e8a\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"8\",\"gridData\":{\"x\":0,\"y\":8,\"w\":48,\"h\":10,\"i\":\"8\"},\"embeddableConfig\":{},\"id\":\"595efe70-a2dd-11e8-8e0b-ef1400a16e8a\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"panelIndex\":\"9\",\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":8,\"i\":\"9\"},\"embeddableConfig\":{},\"id\":\"System-Navigation\",\"type\":\"visualization\",\"version\":\"6.3.0\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":false}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "2018-12-10T14:59:59.999Z",
+      "timeFrom": "2018-12-09T15:00:00.000Z",
+      "refreshInterval": {
+        "pause": true,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]
