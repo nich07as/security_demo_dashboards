@@ -6,9 +6,9 @@
 Some examples are as follows:
 
 ## Packetbeat
-- [Placeholder for packetbeat dashboard](link_here)
+- ![Excerpt of Packetbeat Dashboard](https://github.com/nich07as/security_demo_dashboards/blob/master/Packetbeat/packetbeat_dashboard_export_image.png)
 
 ## Winlogbeat
-- [Placeholder for winlogbeatdashboard](link_here)
+- ![Excerpt of Winlogbeat Dashboard](https://github.com/nich07as/security_demo_dashboards/blob/master/WinLogBeat/winlogbeat_dashboard_image.png)
 
-To use the dashboards, just download the relevant `json` files and add them through your kibana import as shown [here](link_here)
+To use the dashboards, just download the relevant `json` files and import them via [saved objects](https://www.elastic.co/guide/en/kibana/current/managing-saved-objects.html) through Kibana. 
