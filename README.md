@@ -1,6 +1,6 @@
 # Some Dashboards to get you started if you have the following installed:
 
-- WingLogBeat (with Sysmon enabled)
+- WinLogBeat (with Sysmon enabled)
 - PacketBeat (with flows)
 
 Some examples are as follows:
